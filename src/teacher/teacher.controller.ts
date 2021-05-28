@@ -1,5 +1,6 @@
 import { Controller, Get, Post, Put, Param } from "@nestjs/common"
 import { FindTeacherResponseDto, CreateTeacherDto } from "./dto/teacher.dto"
+import { FindStudentResponse, FindStudentResponseDto } from "../student/dto/student.dto"
 
 @Controller('teachers')
 
@@ -14,18 +15,18 @@ export class TeacherController {
         return 
     }
 
-    // @Get('/:teacherId/students')
-    // getStudentByTeacherId(@Param('teacherId') teacherId: string): { 
-    //     return "Get Student By Teacher ID"
-    // }
+    @Get('/:teacherId/students')
+    getStudentByTeacherId(@Param('teacherId') teacherId: string):FindStudentResponseDto[] { 
+        return 
+    }
 
-    // @Post()
-    // createTeacher() {
-    //     return "Teacher created"
-    // }
+    @Post()
+    createTeacher():CreateTeacherDto {
+        return 
+    }
 
-    // @Put('/:teacherId/students/:studentId')
-    // updatedTeacher() {
-    //     return "updated Teacher"
-    // }
+    @Put('/:teacherId/students/:studentId')
+    updatedTeacher():FindStudentResponse {
+        return 
+    }
 }

@@ -6,5 +6,5 @@ export class CreateTeacherDto {
 export class FindTeacherResponseDto {
     id: string;
     name: string;
-    student: string;
 }
+

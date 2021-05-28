@@ -17,6 +17,7 @@ export class CreateStudentDto {
 }
 
 export class updateStudentDto {
+    id: string;
     name: string;
     teacher: string;
 }
