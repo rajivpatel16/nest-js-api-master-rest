@@ -1,6 +1,8 @@
-import { Controller, Get, Post, Put, Param, Body, ParseUUIDPipe } from "@nestjs/common"
+import { Controller, Get, Post, Put, Param, Body, ParseUUIDPipe, UsePipes } from "@nestjs/common"
 import { CreateStudentDto, FindStudentResponse, updateStudentDto, FindStudentResponseDto } from "./dto/student.dto"
 import { StudentService } from "../student/student.service"
+import { JoiValidationPipe } from "../common/validations/joi.validations.pipe"
+import { userSchema } from "./schema/student.schema"
 
 @Controller('students')
  export class StudentController {
@@ -16,8 +18,9 @@ import { StudentService } from "../student/student.service"
        
         return this.studentService.getStudentById(studentId);
     }
-
+   
     @Post()
+    @UsePipes(new JoiValidationPipe(userSchema))
     createStudent(@Body() body: CreateStudentDto) {
         return this.studentService.createStudent(body)
     }
