@@ -13,7 +13,7 @@ export class FindStudentResponseDto {
 
 export class CreateStudentDto {
     name: string;
-    teacher: string;
+    teacher_id: string;
 }
 
 export class updateStudentDto {

@@ -21,8 +21,8 @@ import { userSchema } from "./schema/student.schema"
    
     @Post()
     @UsePipes(new JoiValidationPipe(userSchema))
-    createStudent(@Body() body: CreateStudentDto) {
-        return this.studentService.createStudent(body)
+    async createStudent(@Body() body: CreateStudentDto) {
+        return await this.studentService.createStudent(body)
     }
 
     @Put('/:studentId')
